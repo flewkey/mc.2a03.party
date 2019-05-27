@@ -22,7 +22,7 @@ public class ConfigCommand {
 			return 1;
 		}));
 		literalargumentbuilder.then(Commands.func_197057_a("delete").executes((source) -> {
-			source.getSource().func_197030_a(new TranslationTextComponent("Did you seriously think this command did something?"), true);
+			source.getSource().func_197030_a(new TranslationTextComponent("Did you seriously think this command did something?"), false);
 			return 1;
 		}));
 		dispatcher.register(literalargumentbuilder);
