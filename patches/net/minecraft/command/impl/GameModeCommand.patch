@@ -1,5 +1,5 @@
---- a/net/minecraft/command/impl/GameModeCommand.java	2019-05-23 14:43:22 -0700
-+++ b/net/minecraft/command/impl/GameModeCommand.java	2019-05-26 14:13:25 -0700
+--- a/net/minecraft/command/impl/GameModeCommand.java
++++ b/net/minecraft/command/impl/GameModeCommand.java
 @@ -48,6 +48,10 @@
  
     private static int func_198484_a(CommandContext<CommandSource> p_198484_0_, Collection<ServerPlayerEntity> p_198484_1_, GameType p_198484_2_) {

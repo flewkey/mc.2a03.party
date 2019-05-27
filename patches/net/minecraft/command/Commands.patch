@@ -1,5 +1,5 @@
---- a/net/minecraft/command/Commands.java	2019-05-23 14:43:25 -0700
-+++ b/net/minecraft/command/Commands.java	2019-05-26 17:14:30 -0700
+--- a/net/minecraft/command/Commands.java
++++ b/net/minecraft/command/Commands.java
 @@ -90,6 +90,9 @@
  import net.minecraft.util.text.event.HoverEvent;
  import org.apache.logging.log4j.LogManager;

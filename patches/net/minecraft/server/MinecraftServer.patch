@@ -1,5 +1,5 @@
---- a/net/minecraft/server/MinecraftServer.java	2019-05-23 14:43:21 -0700
-+++ b/net/minecraft/server/MinecraftServer.java	2019-05-26 14:37:21 -0700
+--- a/net/minecraft/server/MinecraftServer.java
++++ b/net/minecraft/server/MinecraftServer.java
 @@ -121,6 +121,7 @@
  import org.apache.commons.lang3.Validate;
  import org.apache.logging.log4j.LogManager;
@@ -21,7 +21,7 @@
           dedicatedserver.func_213208_c(optionset.valueOf(optionspec11));
           boolean flag = !optionset.has(optionspec) && !optionset.valuesOf(optionspec12).contains("nogui");
 -         if (flag && !GraphicsEnvironment.isHeadless()) {
-+	 Config.loadConfig(); //Patched
++         Config.loadConfig(); //Patched
 +         if (flag && !GraphicsEnvironment.isHeadless() && false) { //Patched
              dedicatedserver.func_120011_ar();
           }
