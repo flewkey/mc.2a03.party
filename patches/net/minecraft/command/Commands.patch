@@ -1,0 +1,22 @@
+--- a/net/minecraft/command/Commands.java	2019-05-23 14:43:25 -0700
++++ b/net/minecraft/command/Commands.java	2019-05-26 17:14:30 -0700
+@@ -90,6 +90,9 @@
+ import net.minecraft.util.text.event.HoverEvent;
+ import org.apache.logging.log4j.LogManager;
+ import org.apache.logging.log4j.Logger;
++import party._2a03.command.SpawnCommand; //Patched
++import party._2a03.command.HomeCommand; //Patched
++import party._2a03.command.ConfigCommand; //Patched
+ 
+ public class Commands {
+    private static final Logger field_197061_a = LogManager.getLogger();
+@@ -149,6 +152,9 @@
+       TriggerCommand.func_198852_a(this.field_197062_b);
+       WeatherCommand.func_198862_a(this.field_197062_b);
+       WorldBorderCommand.func_198894_a(this.field_197062_b);
++      SpawnCommand.register(this.field_197062_b); //Patched
++      HomeCommand.register(this.field_197062_b); //Patched
++      ConfigCommand.register(this.field_197062_b); //Patched
+       if (p_i49161_1_) {
+          BanIpCommand.func_198220_a(this.field_197062_b);
+          BanListCommand.func_198229_a(this.field_197062_b);

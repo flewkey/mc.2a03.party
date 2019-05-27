@@ -1,0 +1,13 @@
+--- a/net/minecraft/command/impl/GameModeCommand.java	2019-05-23 14:43:22 -0700
++++ b/net/minecraft/command/impl/GameModeCommand.java	2019-05-26 14:13:25 -0700
+@@ -48,6 +48,10 @@
+ 
+    private static int func_198484_a(CommandContext<CommandSource> p_198484_0_, Collection<ServerPlayerEntity> p_198484_1_, GameType p_198484_2_) {
+       int i = 0;
++      
++      if (p_198484_2_ == GameType.CREATIVE) { //Patched
++		p_198484_0_.getSource().func_197030_a(new TranslationTextComponent("<Server> Creative mode? What are you, a cheater?"), true); //Patched
++      } //Patched
+ 
+       for(ServerPlayerEntity serverplayerentity : p_198484_1_) {
+          if (serverplayerentity.field_71134_c.func_73081_b() != p_198484_2_) {

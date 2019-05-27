@@ -1,0 +1,37 @@
+--- a/net/minecraft/server/MinecraftServer.java	2019-05-23 14:43:21 -0700
++++ b/net/minecraft/server/MinecraftServer.java	2019-05-26 14:37:21 -0700
+@@ -121,6 +121,7 @@
+ import org.apache.commons.lang3.Validate;
+ import org.apache.logging.log4j.LogManager;
+ import org.apache.logging.log4j.Logger;
++import party._2a03.server.Config; //Patched
+ 
+ public abstract class MinecraftServer extends RecursiveEventLoop<TickDelayedTask> implements ISnooperInfo, ICommandExecutor, AutoCloseable, Runnable {
+    private static final Logger field_147145_h = LogManager.getLogger();
+@@ -810,6 +811,7 @@
+    }
+ 
+    public static void main(String[] p_main_0_) {
++      field_147145_h.info("This jar has been patched!"); //Patched
+       OptionParser optionparser = new OptionParser();
+       OptionSpec<Void> optionspec = optionparser.accepts("nogui");
+       OptionSpec<Void> optionspec1 = optionparser.accepts("initSettings", "Initializes 'server.properties' and 'eula.txt', then quits");
+@@ -864,7 +866,8 @@
+          dedicatedserver.func_213197_c(optionset.has(optionspec5));
+          dedicatedserver.func_213208_c(optionset.valueOf(optionspec11));
+          boolean flag = !optionset.has(optionspec) && !optionset.valuesOf(optionspec12).contains("nogui");
+-         if (flag && !GraphicsEnvironment.isHeadless()) {
++	 Config.loadConfig(); //Patched
++         if (flag && !GraphicsEnvironment.isHeadless() && false) { //Patched
+             dedicatedserver.func_120011_ar();
+          }
+ 
+@@ -950,7 +953,7 @@
+    }
+ 
+    public String getServerModName() {
+-      return "vanilla";
++      return "mc.2a03.party"; //Patched
+    }
+ 
+    public CrashReport func_71230_b(CrashReport p_71230_1_) {
