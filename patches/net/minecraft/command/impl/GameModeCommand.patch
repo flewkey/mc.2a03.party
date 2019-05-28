@@ -6,7 +6,7 @@
        int i = 0;
 +      
 +      if (p_198484_2_ == GameType.CREATIVE) { //Patched
-+		p_198484_0_.getSource().func_197030_a(new TranslationTextComponent("<Server> Creative mode? What are you, a cheater?"), true); //Patched
++		p_198484_0_.getSource().func_197030_a(new TranslationTextComponent("<Server> Creative mode? What are you, a cheater?"), false); //Patched
 +      } //Patched
  
        for(ServerPlayerEntity serverplayerentity : p_198484_1_) {
