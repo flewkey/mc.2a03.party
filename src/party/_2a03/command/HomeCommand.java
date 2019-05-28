@@ -20,7 +20,7 @@ public class HomeCommand {
 			PlayerData player = Config.getPlayer(source.getSource().func_197035_h().func_110124_au().toString());
 			PlayerPosition position = player.getHome();
 			if (position.y == -1) {
-				source.getSource().func_197030_a(new TranslationTextComponent("Home not found, ask a moderator to set it"), false);
+				source.getSource().func_197030_a(new TranslationTextComponent("Home not found, do /home set"), false);
 				return 1;
 			}
 			Set<SPlayerPositionLookPacket.Flags> set = EnumSet.noneOf(SPlayerPositionLookPacket.Flags.class);
