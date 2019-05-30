@@ -6,7 +6,7 @@
  import org.apache.logging.log4j.Logger;
 +import party._2a03.server.Config; //Patched
  
- public abstract class MinecraftServer extends RecursiveEventLoop<TickDelayedTask> implements ISnooperInfo, ICommandExecutor, AutoCloseable, Runnable {
+ public abstract class MinecraftServer extends RecursiveEventLoop<TickDelayedTask> implements ISnooperInfo, ICommandSource, AutoCloseable, Runnable {
     private static final Logger field_147145_h = LogManager.getLogger();
 @@ -810,6 +811,7 @@
     }
