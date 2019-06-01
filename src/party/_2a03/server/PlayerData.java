@@ -10,7 +10,7 @@ public class PlayerData {
 	public PlayerData(JSONObject p_json) {
 		this.json = p_json;
 	}
-	
+
 	public PlayerPosition getHome() {
 		JSONArray data = json.getJSONArray("home");
 		double x = data.getDouble(0);
@@ -20,11 +20,11 @@ public class PlayerData {
 		float pitch = data.getFloat(4);
 		return new PlayerPosition(x, y, z, yaw, pitch);
 	}
-	
+
 	public String getUUID() {
 		return json.getString("uuid");
 	}
-	
+
 	public void setHome(PlayerPosition location) {
 		JSONArray locationArray = new JSONArray();
 		locationArray.put(location.x);

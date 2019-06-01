@@ -15,7 +15,7 @@ import party._2a03.server.PlayerPosition;
 public class Config {
 	private static JSONObject json;
 	private static final Logger logger = LogManager.getLogger();
-	
+
 	public static void loadConfig() throws Exception {
 		logger.info("Loading 2a03.party configuration");
 		File f = new File("2a03.json");
@@ -28,7 +28,7 @@ public class Config {
 		}
 		logger.info("Configuration loaded");
 	}
-	
+
 	public static PlayerData getPlayer(String uuid) {
 		JSONArray members = json.getJSONArray("members");
 		JSONObject data = null;
@@ -44,7 +44,7 @@ public class Config {
 		}
 		return new PlayerData(data);
 	}
-	
+
 	public static void setPlayer(PlayerData player) {
 		JSONArray members = json.getJSONArray("members");
 		int playerIndex = -1;
@@ -62,7 +62,7 @@ public class Config {
 		json.put("members", members);
 		saveConfig();
 	}
-	
+
 	public static PlayerPosition getPosition(String key) {
 		JSONArray data = json.getJSONArray(key);
 		double x = data.getDouble(0);
@@ -72,7 +72,7 @@ public class Config {
 		float pitch = data.getFloat(4);
 		return new PlayerPosition((double)x, (double)y, (double)z, (float)yaw, (float)pitch);
 	}
-	
+
 	private static void saveConfig() {
 		try (FileWriter file = new FileWriter("2a03.json")) {
 			file.write(JSONObject.valueToString(json));
