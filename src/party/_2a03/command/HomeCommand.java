@@ -7,9 +7,7 @@ import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.network.play.server.SPlayerPositionLookPacket;
-import java.util.Set;
-import java.util.EnumSet;
+import net.minecraft.world.ServerWorld;
 import party._2a03.server.Config;
 import party._2a03.server.PlayerData;
 import party._2a03.server.PlayerPosition;
@@ -19,15 +17,11 @@ public class HomeCommand {
 		LiteralArgumentBuilder<CommandSource> literalargumentbuilder = Commands.func_197057_a("home").executes((source) -> {
 			PlayerData player = Config.getPlayer(source.getSource().func_197035_h().func_110124_au().toString());
 			PlayerPosition position = player.getHome();
-			if (position.y == -1) {
+			if (position.world == null) {
 				source.getSource().func_197030_a(new TranslationTextComponent("Home not found, do /home set"), false);
 				return 1;
 			}
-			Set<SPlayerPositionLookPacket.Flags> set = EnumSet.noneOf(SPlayerPositionLookPacket.Flags.class);
-			set.add(SPlayerPositionLookPacket.Flags.X);
-			set.add(SPlayerPositionLookPacket.Flags.Y);
-			set.add(SPlayerPositionLookPacket.Flags.Z);
-			((ServerPlayerEntity)source.getSource().func_197035_h()).field_71135_a.func_175089_a((double)position.x, (double)position.y, (double)position.z, (float)position.yaw, (float)position.pitch, set);
+			((ServerPlayerEntity)source.getSource().func_197035_h()).func_200619_a(position.world, position.x, position.y, position.z, position.yaw, position.pitch);
 			source.getSource().func_197030_a(new TranslationTextComponent("Teleported to home"), true);
 			return 1;
 		});
@@ -39,7 +33,8 @@ public class HomeCommand {
 			double z = playerEntity.field_70161_v;
 			float yaw = playerEntity.field_70177_z;
 			float pitch = playerEntity.field_70125_A;
-			PlayerPosition location = new PlayerPosition(x, y, z, yaw, pitch);
+			ServerWorld world = (ServerWorld)playerEntity.field_70170_p;
+			PlayerPosition location = new PlayerPosition(x, y, z, yaw, pitch, world);
 			player.setHome(location);
 			Config.setPlayer(player);
 			source.getSource().func_197030_a(new TranslationTextComponent("Your home has been updated"), true);
@@ -55,7 +50,8 @@ public class HomeCommand {
 			double z = playerEntity.field_70161_v;
 			float yaw = playerEntity.field_70177_z;
 			float pitch = playerEntity.field_70125_A;
-			PlayerPosition location = new PlayerPosition(x, y, z, yaw, pitch);
+			ServerWorld world = (ServerWorld)playerEntity.field_70170_p;
+			PlayerPosition location = new PlayerPosition(x, y, z, yaw, pitch, world);
 			player.setHome(location);
 			Config.setPlayer(player);
 			source.getSource().func_197030_a(new TranslationTextComponent("User's home has been updated ("+player.getUUID()+")"), true);

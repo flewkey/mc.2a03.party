@@ -8,6 +8,15 @@
  
  public abstract class MinecraftServer extends RecursiveEventLoop<TickDelayedTask> implements ISnooperInfo, ICommandSource, AutoCloseable, Runnable {
     private static final Logger field_147145_h = LogManager.getLogger();
+@@ -138,7 +139,7 @@
+    private final DataFixer field_184112_s;
+    private String field_71320_r;
+    private int field_71319_s = -1;
+-   private final Map<DimensionType, ServerWorld> field_71305_c = Maps.newIdentityHashMap();
++   private static final Map<DimensionType, ServerWorld> field_71305_c = Maps.newIdentityHashMap(); //Patched
+    private PlayerList field_71318_t;
+    private volatile boolean field_71317_u = true;
+    private boolean field_71316_v;
 @@ -810,6 +811,7 @@
     }
  
@@ -16,17 +25,18 @@
        OptionParser optionparser = new OptionParser();
        OptionSpec<Void> optionspec = optionparser.accepts("nogui");
        OptionSpec<Void> optionspec1 = optionparser.accepts("initSettings", "Initializes 'server.properties' and 'eula.txt', then quits");
-@@ -864,7 +866,8 @@
+@@ -864,7 +866,9 @@
           dedicatedserver.func_213197_c(optionset.has(optionspec5));
           dedicatedserver.func_213208_c(optionset.valueOf(optionspec11));
           boolean flag = !optionset.has(optionspec) && !optionset.valuesOf(optionspec12).contains("nogui");
 -         if (flag && !GraphicsEnvironment.isHeadless()) {
++	 Config.initConfig(field_71305_c); //Patched
 +         Config.loadConfig(); //Patched
 +         if (flag && !GraphicsEnvironment.isHeadless() && false) { //Patched
              dedicatedserver.func_120011_ar();
           }
  
-@@ -950,7 +953,7 @@
+@@ -950,7 +954,7 @@
     }
  
     public String getServerModName() {
