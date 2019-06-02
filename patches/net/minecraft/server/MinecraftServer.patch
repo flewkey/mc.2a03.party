@@ -30,7 +30,7 @@
           dedicatedserver.func_213208_c(optionset.valueOf(optionspec11));
           boolean flag = !optionset.has(optionspec) && !optionset.valuesOf(optionspec12).contains("nogui");
 -         if (flag && !GraphicsEnvironment.isHeadless()) {
-+	 Config.initConfig(field_71305_c); //Patched
++         Config.initConfig(field_71305_c); //Patched
 +         Config.loadConfig(); //Patched
 +         if (flag && !GraphicsEnvironment.isHeadless() && false) { //Patched
              dedicatedserver.func_120011_ar();

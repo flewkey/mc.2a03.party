@@ -6,7 +6,6 @@ import java.io.FileWriter;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Map;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.ServerWorld;
 import org.json.JSONObject;
@@ -21,7 +20,6 @@ public class Config {
 	private static JSONObject json;
 	private static final Logger logger = LogManager.getLogger();
 	private static Map<DimensionType, ServerWorld> worlds = Maps.newIdentityHashMap();
-	public static MinecraftServer server;
 
 	public static void initConfig(Map<DimensionType, ServerWorld> p_worlds) {
 		worlds = p_worlds;
