@@ -1,11 +1,11 @@
-package party._2a03.command;
+package party._2a03.mc.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.util.text.TranslationTextComponent;
-import party._2a03.server.Config;
+import party._2a03.mc.server.Config;
 
 public class ConfigCommand {
 	public static void register(CommandDispatcher<CommandSource> dispatcher) {

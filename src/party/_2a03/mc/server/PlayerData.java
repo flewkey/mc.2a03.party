@@ -1,8 +1,8 @@
-package party._2a03.server;
+package party._2a03.mc.server;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import party._2a03.server.PlayerPosition;
+import party._2a03.mc.server.PlayerPosition;
 
 public class PlayerData {
 	private String uuid;

@@ -4,9 +4,9 @@
  import net.minecraft.util.text.event.HoverEvent;
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
-+import party._2a03.command.SpawnCommand; //Patched
-+import party._2a03.command.HomeCommand; //Patched
-+import party._2a03.command.ConfigCommand; //Patched
++import party._2a03.mc.command.SpawnCommand; //Patched
++import party._2a03.mc.command.HomeCommand; //Patched
++import party._2a03.mc.command.ConfigCommand; //Patched
  
  public class Commands {
     private static final Logger field_197061_a = LogManager.getLogger();

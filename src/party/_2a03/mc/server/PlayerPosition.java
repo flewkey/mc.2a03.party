@@ -1,4 +1,4 @@
-package party._2a03.server;
+package party._2a03.mc.server;
 
 import org.json.JSONArray;
 import net.minecraft.world.ServerWorld;

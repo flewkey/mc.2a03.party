@@ -1,4 +1,4 @@
-package party._2a03.command;
+package party._2a03.mc.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.command.CommandSource;
@@ -6,8 +6,8 @@ import net.minecraft.command.Commands;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.world.ServerWorld;
-import party._2a03.server.Config;
-import party._2a03.server.PlayerPosition;
+import party._2a03.mc.server.Config;
+import party._2a03.mc.server.PlayerPosition;
 
 public class SpawnCommand {
 	public static void register(CommandDispatcher<CommandSource> dispatcher) {

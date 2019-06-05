@@ -1,4 +1,4 @@
-package party._2a03.server;
+package party._2a03.mc.server;
 
 import com.google.common.collect.Maps;
 import java.io.File;
@@ -13,8 +13,8 @@ import org.json.JSONArray;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import party._2a03.server.PlayerData;
-import party._2a03.server.PlayerPosition;
+import party._2a03.mc.server.PlayerData;
+import party._2a03.mc.server.PlayerPosition;
 
 public class Config {
 	private static JSONObject json;

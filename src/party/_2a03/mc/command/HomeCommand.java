@@ -1,4 +1,4 @@
-package party._2a03.command;
+package party._2a03.mc.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -8,9 +8,9 @@ import net.minecraft.command.Commands;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.world.ServerWorld;
-import party._2a03.server.Config;
-import party._2a03.server.PlayerData;
-import party._2a03.server.PlayerPosition;
+import party._2a03.mc.server.Config;
+import party._2a03.mc.server.PlayerData;
+import party._2a03.mc.server.PlayerPosition;
 
 public class HomeCommand {
 	public static void register(CommandDispatcher<CommandSource> dispatcher) {
