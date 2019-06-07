@@ -76,6 +76,11 @@ public class Config {
 		return json.getJSONArray(key);
 	}
 
+	public static void setData(String key, JSONArray data) {
+		json.put(key, data);
+		saveConfig();
+	}
+
 	public static PlayerPosition parsePosition(JSONArray data) {
 		double x = data.getDouble(0);
 		double y = data.getDouble(1);
