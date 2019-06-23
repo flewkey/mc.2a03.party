@@ -15,8 +15,7 @@ import party._2a03.mc.server.PlayerPosition;
 public class HomeCommand {
 	public static void register(CommandDispatcher<CommandSource> dispatcher) {
 		LiteralArgumentBuilder<CommandSource> literalargumentbuilder = Commands.func_197057_a("home").executes((source) -> {
-			PlayerData player = Config.getPlayer(source.getSource().func_197035_h().func_110124_au().toString());
-			PlayerPosition position = player.getHome();
+			PlayerPosition position = source.getSource().func_197035_h().player_data.getHome();
 			if (position.world == null) {
 				source.getSource().func_197030_a(new TranslationTextComponent("Home not found, do /home set"), false);
 				return 1;
@@ -26,8 +25,8 @@ public class HomeCommand {
 			return 1;
 		});
 		literalargumentbuilder.then(Commands.func_197057_a("set").executes((source) -> {
-			PlayerData player = Config.getPlayer(source.getSource().func_197035_h().func_110124_au().toString());
 			ServerPlayerEntity playerEntity = source.getSource().func_197035_h();
+			PlayerData player = playerEntity.player_data;
 			double x = playerEntity.field_70165_t;
 			double y = playerEntity.field_70163_u;
 			double z = playerEntity.field_70161_v;
