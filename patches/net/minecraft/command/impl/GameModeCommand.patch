@@ -1,6 +1,6 @@
 --- a/net/minecraft/command/impl/GameModeCommand.java
 +++ b/net/minecraft/command/impl/GameModeCommand.java
-@@ -49,6 +49,10 @@
+@@ -50,6 +50,10 @@
     private static int func_198484_a(CommandContext<CommandSource> p_198484_0_, Collection<ServerPlayerEntity> p_198484_1_, GameType p_198484_2_) {
        int i = 0;
  

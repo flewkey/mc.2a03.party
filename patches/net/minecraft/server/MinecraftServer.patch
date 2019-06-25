@@ -17,7 +17,7 @@
     private PlayerList field_71318_t;
     private volatile boolean field_71317_u = true;
     private boolean field_71316_v;
-@@ -810,6 +811,7 @@
+@@ -804,6 +805,7 @@
     }
  
     public static void main(String[] p_main_0_) {
@@ -25,7 +25,7 @@
        OptionParser optionparser = new OptionParser();
        OptionSpec<Void> optionspec = optionparser.accepts("nogui");
        OptionSpec<Void> optionspec1 = optionparser.accepts("initSettings", "Initializes 'server.properties' and 'eula.txt', then quits");
-@@ -864,7 +866,9 @@
+@@ -858,7 +860,9 @@
           dedicatedserver.func_213197_c(optionset.has(optionspec5));
           dedicatedserver.func_213208_c(optionset.valueOf(optionspec11));
           boolean flag = !optionset.has(optionspec) && !optionset.valuesOf(optionspec12).contains("nogui");
@@ -36,7 +36,7 @@
              dedicatedserver.func_120011_ar();
           }
  
-@@ -950,7 +954,7 @@
+@@ -944,7 +948,7 @@
     }
  
     public String getServerModName() {
