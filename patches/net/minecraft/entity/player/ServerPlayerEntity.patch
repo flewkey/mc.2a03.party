@@ -1,16 +1,15 @@
 --- a/net/minecraft/entity/player/ServerPlayerEntity.java
 +++ b/net/minecraft/entity/player/ServerPlayerEntity.java
-@@ -119,6 +119,9 @@
+@@ -119,6 +119,8 @@
  import net.minecraft.world.storage.WorldInfo;
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
 +import party._2a03.mc.server.Config; //Patched
 +import party._2a03.mc.server.PlayerData; //Patched
-+import party._2a03.mc.server.PlayerPosition; //Patched
  
  public class ServerPlayerEntity extends PlayerEntity implements IContainerListener {
     private static final Logger field_147102_bM = LogManager.getLogger();
-@@ -157,6 +160,7 @@
+@@ -157,6 +159,7 @@
     public boolean field_71137_h;
     public int field_71138_i;
     public boolean field_71136_j;
@@ -18,7 +17,7 @@
  
     public ServerPlayerEntity(MinecraftServer p_i45285_1_, ServerWorld p_i45285_2_, GameProfile p_i45285_3_, PlayerInteractionManager p_i45285_4_) {
        super(p_i45285_2_, p_i45285_3_);
-@@ -168,11 +172,13 @@
+@@ -168,6 +171,7 @@
        this.field_192042_bX = p_i45285_1_.func_184103_al().func_192054_h(this);
        this.field_70138_W = 1.0F;
        this.func_205734_a(p_i45285_2_);
@@ -26,20 +25,3 @@
     }
  
     private void func_205734_a(ServerWorld p_205734_1_) {
--      BlockPos blockpos = p_205734_1_.func_175694_M();
--      if (p_205734_1_.field_73011_w.func_191066_m() && p_205734_1_.func_72912_H().func_76077_q() != GameType.ADVENTURE) {
-+      PlayerPosition position = Config.parsePosition(Config.getData("spawn")); //Patched
-+      BlockPos blockpos = new BlockPos(position.x, position.y, position.z); //Patched
-+      if (p_205734_1_.field_73011_w.func_191066_m() && p_205734_1_.func_72912_H().func_76077_q() != GameType.ADVENTURE && false) { //Patched
-          int i = Math.max(0, this.field_71133_b.func_184108_a(p_205734_1_));
-          int j = MathHelper.func_76128_c(p_205734_1_.func_175723_af().func_177729_b((double)blockpos.func_177958_n(), (double)blockpos.func_177952_p()));
-          if (j < i) {
-@@ -202,7 +208,7 @@
-             }
-          }
-       } else {
--         this.func_174828_a(blockpos, 0.0F, 0.0F);
-+         this.func_174828_a(blockpos, position.yaw, position.pitch); //Patched
- 
-          while(!p_205734_1_.func_217345_j(this) && this.field_70163_u < 255.0D) {
-             this.func_70107_b(this.field_70165_t, this.field_70163_u + 1.0D, this.field_70161_v);
