@@ -1,7 +1,7 @@
 package party._2a03.mc.server;
 
 import org.json.JSONArray;
-import net.minecraft.world.ServerWorld;
+import net.minecraft.world.server.ServerWorld;
 
 public class PlayerPosition {
 	public double x;

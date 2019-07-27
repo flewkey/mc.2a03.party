@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Map;
 import net.minecraft.world.dimension.DimensionType;
-import net.minecraft.world.ServerWorld;
+import net.minecraft.world.server.ServerWorld;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.apache.commons.io.IOUtils;
