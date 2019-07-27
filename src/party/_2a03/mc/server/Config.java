@@ -45,7 +45,7 @@ public class Config {
 			JSONObject item = members.getJSONObject(i);
 			String item_uuid = item.getString("uuid");
 			if (item_uuid.equals(uuid)) {
-				home = parsePosition(item.getJSONArray("home"));
+				home = new PlayerPosition(item.getJSONArray("home"));
 			}
 		}
 		if (home == null) {
@@ -80,20 +80,9 @@ public class Config {
 		json.put(key, data);
 		saveConfig();
 	}
-
-	public static PlayerPosition parsePosition(JSONArray data) {
-		double x = data.getDouble(0);
-		double y = data.getDouble(1);
-		double z = data.getDouble(2);
-		float yaw = data.getFloat(3);
-		float pitch = data.getFloat(4);
-		int dimension_id = data.getInt(5);
-		if (dimension_id != -2) {
-			ServerWorld world = worlds.get(DimensionType.func_186069_a(dimension_id));
-			return new PlayerPosition(x, y, z, yaw, pitch, world);
-		} else {
-			return new PlayerPosition();
-		}
+	
+	public static ServerWorld getWorld(int dimension_id) {
+		return worlds.get(DimensionType.func_186069_a(dimension_id));
 	}
 
 	private static void saveConfig() {

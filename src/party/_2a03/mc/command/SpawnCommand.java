@@ -13,7 +13,7 @@ import party._2a03.mc.server.PlayerPosition;
 public class SpawnCommand {
 	public static void register(CommandDispatcher<CommandSource> dispatcher) {
 		LiteralArgumentBuilder<CommandSource> literalargumentbuilder = Commands.func_197057_a("spawn").executes((source) -> {
-			PlayerPosition position = Config.parsePosition(Config.getData("spawn"));
+			PlayerPosition position = new PlayerPosition(Config.getData("spawn"));
 			if (position.world == null) {
 				if (source.getSource().func_197034_c(2)) {
 					source.getSource().func_197030_a(new TranslationTextComponent("Spawn not found, do /spawn set"), false);

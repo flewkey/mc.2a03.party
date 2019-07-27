@@ -2,6 +2,7 @@ package party._2a03.mc.server;
 
 import org.json.JSONArray;
 import net.minecraft.world.server.ServerWorld;
+import party._2a03.mc.server.Config;
 
 public class PlayerPosition {
 	public double x;
@@ -12,6 +13,18 @@ public class PlayerPosition {
 	public ServerWorld world;
 
 	public PlayerPosition() {
+	}
+	
+	public PlayerPosition(JSONArray data) {
+		int dimension_id = data.getInt(5);
+		if (dimension_id != -2) {
+			this.x = data.getDouble(0);
+			this.y = data.getDouble(1);
+			this.z = data.getDouble(2);
+			this.yaw = data.getFloat(3);
+			this.pitch = data.getFloat(4);
+			this.world = Config.getWorld(dimension_id);
+		}
 	}
 
 	public PlayerPosition(double p_x, double p_y, double p_z, float p_yaw, float p_pitch, ServerWorld p_world) {
