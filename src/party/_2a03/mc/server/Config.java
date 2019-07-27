@@ -33,7 +33,9 @@ public class Config {
 			String jsonRaw = IOUtils.toString(is, "UTF-8");
 			json = new JSONObject(jsonRaw);
 		} else {
-			logger.info("Unable to find config");
+			logger.info("Config not found, creating one");
+			json = new JSONObject("{\"spawn\":[0,0,0,0,0,-2],\"members\":[]}");
+			saveConfig();
 		}
 		logger.info("Configuration loaded");
 	}
