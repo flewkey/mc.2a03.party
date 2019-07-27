@@ -14,6 +14,14 @@ public class SpawnCommand {
 	public static void register(CommandDispatcher<CommandSource> dispatcher) {
 		LiteralArgumentBuilder<CommandSource> literalargumentbuilder = Commands.func_197057_a("spawn").executes((source) -> {
 			PlayerPosition position = Config.parsePosition(Config.getData("spawn"));
+			if (position.world == null) {
+				if (source.getSource().func_197034_c(2)) {
+					source.getSource().func_197030_a(new TranslationTextComponent("Spawn not found, do /spawn set"), false);
+				} else {
+					source.getSource().func_197030_a(new TranslationTextComponent("Spawn not found, ask an admin to set it"), false);
+				}
+				return 1;
+			}
 			((ServerPlayerEntity)source.getSource().func_197035_h()).func_200619_a(position.world, position.x, position.y, position.z, position.yaw, position.pitch);
 			source.getSource().func_197030_a(new TranslationTextComponent("Teleported to the spawn point"), true);
 			return 1;
