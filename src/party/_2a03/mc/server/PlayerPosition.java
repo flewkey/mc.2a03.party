@@ -46,11 +46,11 @@ public class PlayerPosition {
 			json.put(this.pitch);
 			json.put(this.world.field_73011_w.func_186058_p().func_186068_a());
 		} else {
-			json.put(-2);
-			json.put(-2);
-			json.put(-2);
-			json.put(-2);
-			json.put(-2);
+			json.put(0);
+			json.put(0);
+			json.put(0);
+			json.put(0);
+			json.put(0);
 			json.put(-2);
 		}
 		return json;
