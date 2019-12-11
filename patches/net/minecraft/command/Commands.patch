@@ -1,6 +1,6 @@
 --- a/net/minecraft/command/Commands.java
 +++ b/net/minecraft/command/Commands.java
-@@ -90,6 +90,9 @@
+@@ -96,6 +96,9 @@
  import net.minecraft.util.text.event.HoverEvent;
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
@@ -10,13 +10,13 @@
  
  public class Commands {
     private static final Logger field_197061_a = LogManager.getLogger();
-@@ -149,6 +152,9 @@
+@@ -156,6 +159,9 @@
        TriggerCommand.func_198852_a(this.field_197062_b);
        WeatherCommand.func_198862_a(this.field_197062_b);
        WorldBorderCommand.func_198894_a(this.field_197062_b);
 +      SpawnCommand.register(this.field_197062_b); //Patched
 +      HomeCommand.register(this.field_197062_b); //Patched
 +      ConfigCommand.register(this.field_197062_b); //Patched
-       if (p_i49161_1_) {
-          BanIpCommand.func_198220_a(this.field_197062_b);
-          BanListCommand.func_198229_a(this.field_197062_b);
+       if (SharedConstants.field_206244_b) {
+          TestCommand.func_229613_a_(this.field_197062_b);
+       }

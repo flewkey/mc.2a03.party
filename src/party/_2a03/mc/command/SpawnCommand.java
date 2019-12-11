@@ -30,9 +30,9 @@ public class SpawnCommand {
 			return source.func_197034_c(2);
 		}).executes((source) -> {
 			ServerPlayerEntity playerEntity = source.getSource().func_197035_h();
-			double x = playerEntity.field_70165_t;
-			double y = playerEntity.field_70163_u;
-			double z = playerEntity.field_70161_v;
+			double x = playerEntity.func_226277_ct_();
+			double y = playerEntity.func_226278_cu_();
+			double z = playerEntity.func_226281_cx_();
 			float yaw = playerEntity.field_70177_z;
 			float pitch = playerEntity.field_70125_A;
 			ServerWorld world = (ServerWorld)playerEntity.field_70170_p;

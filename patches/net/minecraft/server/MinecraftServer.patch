@@ -1,6 +1,6 @@
 --- a/net/minecraft/server/MinecraftServer.java
 +++ b/net/minecraft/server/MinecraftServer.java
-@@ -130,6 +130,7 @@
+@@ -135,6 +135,7 @@
  import org.apache.commons.lang3.Validate;
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
@@ -8,7 +8,7 @@
  
  public abstract class MinecraftServer extends RecursiveEventLoop<TickDelayedTask> implements ISnooperInfo, ICommandSource, AutoCloseable, Runnable {
     private static final Logger field_147145_h = LogManager.getLogger();
-@@ -148,7 +149,7 @@
+@@ -153,7 +154,7 @@
     private final DataFixer field_184112_s;
     private String field_71320_r;
     private int field_71319_s = -1;
@@ -17,7 +17,7 @@
     private PlayerList field_71318_t;
     private volatile boolean field_71317_u = true;
     private boolean field_71316_v;
-@@ -816,6 +817,7 @@
+@@ -832,6 +833,7 @@
     }
  
     public static void main(String[] p_main_0_) {
@@ -25,7 +25,7 @@
        OptionParser optionparser = new OptionParser();
        OptionSpec<Void> optionspec = optionparser.accepts("nogui");
        OptionSpec<Void> optionspec1 = optionparser.accepts("initSettings", "Initializes 'server.properties' and 'eula.txt', then quits");
-@@ -870,7 +872,9 @@
+@@ -886,7 +888,9 @@
           dedicatedserver.func_213197_c(optionset.has(optionspec5));
           dedicatedserver.func_213208_c(optionset.valueOf(optionspec11));
           boolean flag = !optionset.has(optionspec) && !optionset.valuesOf(optionspec12).contains("nogui");
@@ -36,7 +36,7 @@
              dedicatedserver.func_120011_ar();
           }
  
-@@ -956,7 +960,7 @@
+@@ -972,7 +976,7 @@
     }
  
     public String getServerModName() {

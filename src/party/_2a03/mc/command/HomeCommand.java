@@ -27,9 +27,9 @@ public class HomeCommand {
 		literalargumentbuilder.then(Commands.func_197057_a("set").executes((source) -> {
 			ServerPlayerEntity playerEntity = source.getSource().func_197035_h();
 			PlayerData player = playerEntity.player_data;
-			double x = playerEntity.field_70165_t;
-			double y = playerEntity.field_70163_u;
-			double z = playerEntity.field_70161_v;
+			double x = playerEntity.func_226277_ct_();
+			double y = playerEntity.func_226278_cu_();
+			double z = playerEntity.func_226281_cx_();
 			float yaw = playerEntity.field_70177_z;
 			float pitch = playerEntity.field_70125_A;
 			ServerWorld world = (ServerWorld)playerEntity.field_70170_p;
@@ -44,9 +44,9 @@ public class HomeCommand {
 		}).then(Commands.func_197056_a("UUID", StringArgumentType.word()).executes((source) -> {
 			PlayerData player = Config.getPlayer(StringArgumentType.getString(source, "UUID"));
 			ServerPlayerEntity playerEntity = source.getSource().func_197035_h();
-			double x = playerEntity.field_70165_t;
-			double y = playerEntity.field_70163_u;
-			double z = playerEntity.field_70161_v;
+			double x = playerEntity.func_226277_ct_();
+			double y = playerEntity.func_226278_cu_();
+			double z = playerEntity.func_226281_cx_();
 			float yaw = playerEntity.field_70177_z;
 			float pitch = playerEntity.field_70125_A;
 			ServerWorld world = (ServerWorld)playerEntity.field_70170_p;

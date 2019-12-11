@@ -1,6 +1,6 @@
 --- a/net/minecraft/entity/player/ServerPlayerEntity.java
 +++ b/net/minecraft/entity/player/ServerPlayerEntity.java
-@@ -119,6 +119,8 @@
+@@ -115,6 +115,8 @@
  import net.minecraft.world.storage.WorldInfo;
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
@@ -9,7 +9,7 @@
  
  public class ServerPlayerEntity extends PlayerEntity implements IContainerListener {
     private static final Logger field_147102_bM = LogManager.getLogger();
-@@ -157,6 +159,7 @@
+@@ -153,6 +155,7 @@
     public boolean field_71137_h;
     public int field_71138_i;
     public boolean field_71136_j;
@@ -17,7 +17,7 @@
  
     public ServerPlayerEntity(MinecraftServer p_i45285_1_, ServerWorld p_i45285_2_, GameProfile p_i45285_3_, PlayerInteractionManager p_i45285_4_) {
        super(p_i45285_2_, p_i45285_3_);
-@@ -168,6 +171,7 @@
+@@ -164,6 +167,7 @@
        this.field_192042_bX = p_i45285_1_.func_184103_al().func_192054_h(this);
        this.field_70138_W = 1.0F;
        this.func_205734_a(p_i45285_2_);
