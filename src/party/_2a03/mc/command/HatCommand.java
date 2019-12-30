@@ -16,7 +16,7 @@ public class HatCommand {
 			ItemStack head = serverplayerentity.func_184582_a(EquipmentSlotType.HEAD);
 			serverplayerentity.func_184201_a(EquipmentSlotType.MAINHAND, head);
 			serverplayerentity.func_184201_a(EquipmentSlotType.HEAD, mainhand);
-			source.getSource().func_197030_a(new TranslationTextComponent("Swapped items between main hand and head"), true);
+			source.getSource().func_197030_a(new TranslationTextComponent("Swapped items between main hand and head"), false);
 			return 1;
 		}));
 	}
