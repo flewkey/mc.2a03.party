@@ -1,0 +1,11 @@
+--- a/net/minecraft/block/TNTBlock.java
++++ b/net/minecraft/block/TNTBlock.java
+@@ -68,7 +68,7 @@
+    }
+ 
+    private static void func_196535_a(World p_196535_0_, BlockPos p_196535_1_, @Nullable LivingEntity p_196535_2_) {
+-      if (!p_196535_0_.field_72995_K) {
++      if (!p_196535_0_.field_72995_K && false) { //Patched
+          TNTEntity tntentity = new TNTEntity(p_196535_0_, (double)p_196535_1_.func_177958_n() + 0.5D, (double)p_196535_1_.func_177956_o(), (double)p_196535_1_.func_177952_p() + 0.5D, p_196535_2_);
+          p_196535_0_.func_217376_c(tntentity);
+          p_196535_0_.func_184148_a((PlayerEntity)null, tntentity.func_226277_ct_(), tntentity.func_226278_cu_(), tntentity.func_226281_cx_(), SoundEvents.field_187904_gd, SoundCategory.BLOCKS, 1.0F, 1.0F);
