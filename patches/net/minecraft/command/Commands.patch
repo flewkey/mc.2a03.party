@@ -1,22 +1,24 @@
 --- a/net/minecraft/command/Commands.java
 +++ b/net/minecraft/command/Commands.java
-@@ -96,6 +96,10 @@
+@@ -96,6 +96,11 @@
  import net.minecraft.util.text.event.HoverEvent;
  import org.apache.logging.log4j.LogManager;
  import org.apache.logging.log4j.Logger;
 +import party._2a03.mc.command.SpawnCommand; //Patched
 +import party._2a03.mc.command.HomeCommand; //Patched
++import party._2a03.mc.command.HeadCommand; //Patched
 +import party._2a03.mc.command.HatCommand; //Patched
 +import party._2a03.mc.command.ConfigCommand; //Patched
  
  public class Commands {
     private static final Logger field_197061_a = LogManager.getLogger();
-@@ -156,6 +160,10 @@
+@@ -156,6 +161,11 @@
        TriggerCommand.func_198852_a(this.field_197062_b);
        WeatherCommand.func_198862_a(this.field_197062_b);
        WorldBorderCommand.func_198894_a(this.field_197062_b);
 +      SpawnCommand.register(this.field_197062_b); //Patched
 +      HomeCommand.register(this.field_197062_b); //Patched
++      HeadCommand.register(this.field_197062_b); //Patched
 +      HatCommand.register(this.field_197062_b); //Patched
 +      ConfigCommand.register(this.field_197062_b); //Patched
        if (SharedConstants.field_206244_b) {
